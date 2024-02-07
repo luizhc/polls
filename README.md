@@ -26,6 +26,7 @@
 
 - Criar serviços RESTFul
 - Instalar: `npm i fastify`
+- Pra trabalhar com cookie: `npm i @fastify/cookie`, exemplo: https://www.npmjs.com/package/@fastify/cookie#example
 
 ## 🐳 Docker
 
