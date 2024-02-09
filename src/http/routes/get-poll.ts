@@ -5,11 +5,15 @@ import { redis } from "../../lib/redis";
 
 export async function getPoll(app: FastifyInstance) {
   app.get("/polls/:pollId", async (request, reply) => {
-    const getPollParams = z.object({
-      pollId: z.string().uuid(),
-    });
+    const getPollParams = z.object({ pollId: z.string().uuid() });
 
-    const { pollId } = getPollParams.parse(request.params);
+    const { pollId } = request.params as { pollId: string };
+
+    const validationResultParams = getPollParams.safeParse({ pollId });
+
+    if (!validationResultParams.success) {
+      return reply.status(400).send({ message: "Invalid poll ID on params." });
+    }
 
     const poll = await prisma.poll.findUnique({
       where: {
