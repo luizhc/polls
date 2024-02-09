@@ -7,16 +7,38 @@ import { voting } from "../../utils/voting-pub-sub";
 
 export async function voteOnPoll(app: FastifyInstance) {
   app.post("/polls/:pollId/votes", async (request, reply) => {
-    const voteOnPollBody = z.object({
-      pollOptionId: z.string().uuid(),
+    const voteOnPollParams = z.object({ pollId: z.string().uuid() });
+    const voteOnPollBody = z.object({ pollOptionId: z.string().uuid() });
+
+    const { pollId } = request.params as { pollId: string };
+    const { pollOptionId } = request.body as { pollOptionId: string };
+
+    const validationResultParams = voteOnPollParams.safeParse({ pollId });
+    const validationResultBody = voteOnPollBody.safeParse({ pollOptionId });
+
+    if (!validationResultParams.success) {
+      return reply.status(400).send({ message: "Invalid poll ID on params." });
+    }
+
+    if (!validationResultBody.success) {
+      return reply
+        .status(400)
+        .send({ message: "Invalid option poll ID on body." });
+    }
+
+    const hasPoll = await prisma.poll.findUnique({ where: { id: pollId } });
+
+    if (!hasPoll) {
+      return reply.status(400).send({ message: "Poll not found." });
+    }
+
+    const hasPollOption = await prisma.pollOption.findUnique({
+      where: { id: pollOptionId },
     });
 
-    const voteOnPollParams = z.object({
-      pollId: z.string().uuid(),
-    });
-
-    const { pollId } = voteOnPollParams.parse(request.params);
-    const { pollOptionId } = voteOnPollBody.parse(request.body);
+    if (!hasPollOption) {
+      return reply.status(400).send({ message: "Poll option not found." });
+    }
 
     let { sessionId } = request.cookies;
 
