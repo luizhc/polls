@@ -3,53 +3,67 @@
 ## 🚧 Sobre
 
 - Aplicação construida em [Node.js](https://nodejs.org/en)
-- Para registro de enquetes (polls) em banco de dados [PostgreSQL](https://www.postgresql.org/)
+- Para registro de enquetes (polls) em banco de dados [PostgreSQL](https://www.postgresql.org/) e [Redis](https://redis.io)
 - Utilizando [WebSockets](https://developer.mozilla.org/pt-BR/docs/Web/API/WebSockets_API) para comunicação em tempo real
 
 ## 🛠️ Construção
 
-- Gerar arquivo `package.json`: `npm init -y`
+- Gere arquivo `package.json`: `npm init -y`
 
-- Instalar Typescript e integração com Node: `npm i typescript @types/node -D`
+- Instale [Typescript](https://www.typescriptlang.org/) e integração com Node: `npm i typescript @types/node -D`
 
-- Criar tsconfig.json: `npx tsc --init`
+- Crie `tsconfig.json`, instale o tsc: `npx tsc --init`
 
-- Configurar tsconfig.json conforme: https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
+- Configure `tsconfig.json`, conforme [Node Target Mapping](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping)
 
-- Criar estrutura `src > http > server.ts`
+- Crie estrutura `src > http > server.ts`
 
-- Instalar conversor de código .ts pra .js e executar código com node: `npm i tsx -D`
+- Instale [tsx](https://www.npmjs.com/package/tsx) que converte código `.ts` pra `.js`, e executa código com node: `npm i tsx -D`
 
-- Criar em `package.json` script `"dev": "tsx watch src/http/server.ts"`
+- Crie em `package.json` o script `"dev": "tsx watch src/http/server.ts"`
 
-## 🎯 Fastify
+## 🎯 [Fastify](https://fastify.dev/)
 
-- Criar serviços RESTFul
-- Instalar: `npm i fastify`
-- Pra trabalhar com cookie: `npm i @fastify/cookie`, exemplo: https://www.npmjs.com/package/@fastify/cookie#example
+Cria serviços RESTFul
 
-## 🐳 Docker
+- Instale: `npm i fastify`
+- Trabalhe com [cookie](https://github.com/fastify/fastify-cookie?tab=readme-ov-file#example): `npm i @fastify/cookie`
+- Trabalhe com [websocket](https://github.com/fastify/fastify-websocket?tab=readme-ov-file#usage): `npm i @fastify/websocket`
 
-- Criar/gerenciar imagens e containers
-- Rodar no modo detach: `docker compose up -d`
-- Listar containers: `docker ps`
-- Ver logs do container: `docker logs <container_id>`
+## 🐳 [Docker](https://www.docker.com/)
 
-## 💾 Prisma
+Cria/gerencia imagens e containers
 
-- Criar/gerenciar banco de dados
-- Instalar: `npm i prisma -D`
-- Configurar: `npx prisma init`
-- Aplicar migração: `npx prisma migrate dev`
-- Abrir studio: `npx prisma studio`
+- Roda no modo detach: `docker compose up -d`
+- Lista containers: `docker ps`
+- Vê logs do container: `docker logs <container_id>`
 
-## 🔌 Hoppscotch
+## 💾 [Prisma](https://www.npmjs.com/package/prisma)
 
-- Client para testar HTTP requests
-- Acessar: https://hoppscotch.io/
-- Configurar: configuração > extensões > selecionar chrome > marcar checkbox "use a extensão..."
+Cria/gerencia banco de dados
 
-## 🎬 Zod
+- Instale: `npm i prisma -D`
+- Configure: `npx prisma init`
+- Aplica migração: `npx prisma migrate dev`
+- Abre studio: `npx prisma studio`
 
-- Implementar validação de dados
-- Instalar: `npm i zod`
+## 🔌 [Hoppscotch](https://hoppscotch.io/)
+
+Client para testar requests HTTP, WS, etc
+
+- Configura: configuração > extensões > selecionar chrome > marcar checkbox "use a extensão..."
+
+## 🎬 [Zod](https://www.npmjs.com/package/zod)
+
+Realiza validações de dados
+
+- Instale: `npm i zod`
+
+## 🔥 [Redis](https://www.npmjs.com/package/ioredis)
+
+Banco de dados em memória (cache)
+
+- Instale: `npm i ioredis` para manipular Redis dentro do Node
+- Alguns comandos usados:
+  - [ZINCRBY](https://redis.io/commands/zincrby/)
+  - [ZRANGE](https://redis.io/commands/zrange/)
