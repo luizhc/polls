@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "API Node.js with WebSockets",
   "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
   "scripts": {
-    "dev": "tsx watch src/http/server.ts"
+    "dev": "tsx watch src/http/server.ts",
+    "build": "tsup src",
+    "start": "node dist/http/server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +17,7 @@
   "devDependencies": {
     "@types/node": "^20.11.16",
     "prisma": "^5.9.1",
+    "tsup": "^8.0.2",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   },
