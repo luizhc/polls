@@ -5,6 +5,7 @@ export const redis = new Redis({
   port: Number(process.env.REDIS_PORT),
   username: process.env.REDIS_USERNAME,
   password: process.env.REDIS_PASSWORD,
+  maxRetriesPerRequest: 50,
 });
 
 redis.connect(() => console.log("Redis connected!"));
