@@ -1,15 +1,10 @@
 import Redis from "ioredis";
 
-const { REDIS_HOST, REDIS_PORT, REDIS_USERNAME, REDIS_PASSWORD } = process.env;
-
 export const redis = new Redis({
-  host: REDIS_HOST,
-  port: REDIS_PORT ? Number(REDIS_PORT) : 6379,
-  username: REDIS_USERNAME,
-  password: REDIS_PASSWORD,
-  tls: {
-    rejectUnauthorized: false,
-  },
+  host: process.env.REDIS_HOST,
+  port: Number(process.env.REDIS_PORT),
+  username: process.env.REDIS_USERNAME,
+  password: process.env.REDIS_PASSWORD,
 });
 
 redis.connect(() => console.log("Redis connected!"));
