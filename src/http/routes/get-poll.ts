@@ -3,6 +3,14 @@ import { z } from "zod";
 import { prisma } from "../../lib/prisma";
 import { redis } from "../../lib/redis";
 
+export async function getPolls(app: FastifyInstance) {
+  app.get("/polls", async (request, reply) => {
+    const polls = await prisma.poll.findMany();
+
+    return reply.send(polls);
+  });
+}
+
 export async function getPoll(app: FastifyInstance) {
   app.get("/polls/:pollId", async (request, reply) => {
     const getPollParams = z.object({ pollId: z.string().uuid() });
