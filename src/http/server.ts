@@ -25,7 +25,13 @@ app.register(pollResults);
 app.register(chat);
 
 const port = process.env.PORT ? Number(process.env.PORT) : 3333;
+const host = "0.0.0.0";
 
-app.listen({ port }).then(() => {
-  console.log(`Server running on port ${port}`);
-});
+app
+  .listen({ port, host })
+  .then(() => {
+    console.log(`Server running on port ${port}`);
+  })
+  .catch((err) => {
+    throw err;
+  });
