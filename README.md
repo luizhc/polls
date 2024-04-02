@@ -76,16 +76,16 @@
 ## 🛹 Execução
 
 - Instale as dependências: `npm i`
-- Configure seu [docker](#🐳-docker): `npm run docker`
-- Prepare sua base de dados local: `npm run prisma`
+- Configure seu [Docker](#-docker): `npm run docker`
+- Prepare seu [Prisma](#-prisma) local: `npm run prisma`
 - Execute o projeto:
   - Local: `npm run dev`
   - Prod: `npm run start`
-- Desfrute das [APIs](#🚀-apis)
+- Desfrute das [APIs](#-apis)
 
 ## 🚀 APIs
 
-Faça o download e importe no seu [Hoppscotch](#🔌-hoppscotch) o arquivo [polls_collection](./assets/polls_collection.json).
+No seu [Hoppscotch](#-hoppscotch) baixe e importe o arquivo <a href="https://github.com/luizhc/polls/blob/main/assets/polls_collection.zip" download>polls_collection.json</a>.
 
 ### Get polls
 
