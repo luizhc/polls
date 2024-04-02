@@ -22,7 +22,7 @@
 
 - Crie em `package.json` o script `"dev": "tsx watch src/http/server.ts"`
 
-  ## 🎯 [Fastify](https://fastify.dev/)
+  ### 🎯 [Fastify](https://fastify.dev/)
 
   Cria serviços RESTFul
 
@@ -30,16 +30,16 @@
   - Trabalhe com [cookie](https://github.com/fastify/fastify-cookie?tab=readme-ov-file#example): `npm i @fastify/cookie`
   - Trabalhe com [websocket](https://github.com/fastify/fastify-websocket?tab=readme-ov-file#usage): `npm i @fastify/websocket`
 
-  ## 🐳 [Docker](https://www.docker.com/)
+  ### 🐳 [Docker](https://www.docker.com/)
 
   Cria/gerencia imagens e containers
 
   - Instale o [docker](https://docs.docker.com/engine/install/)
-  - Inicie todos os serviços definidos em [docker-compose.yml](./docker-compose.yml) no modo "detached" (em segundo plano): `docker compose up -d`
+  - Inicie (caso ainda não tenha os containers criados) todos os serviços definidos em [docker-compose.yml](./docker-compose.yml) no modo "detached" (em segundo plano): `docker compose up -d` ou `npm run docker`
   - Liste containers: `docker ps`
   - Veja logs do container: `docker logs <container_id>`
 
-  ## 💾 [Prisma](https://www.npmjs.com/package/prisma)
+  ### 💾 [Prisma](https://www.npmjs.com/package/prisma)
 
   Cria/gerencia banco de dados
 
@@ -48,19 +48,19 @@
   - Aplique a migração: `npx prisma migrate dev`
   - Abra studio: `npx prisma studio`
 
-  ## 🔌 [Hoppscotch](https://hoppscotch.io/)
+  ### 🔌 [Hoppscotch](https://hoppscotch.io/)
 
   Client para testar requests HTTP, WS, etc
 
   - Configure: configuração > extensões > selecionar chrome > marcar checkbox "use a extensão..."
 
-  ## 🎬 [Zod](https://www.npmjs.com/package/zod)
+  ### 🎬 [Zod](https://www.npmjs.com/package/zod)
 
   Realiza validações de dados
 
   - Instale: `npm i zod`
 
-  ## 🔥 [Redis](https://www.npmjs.com/package/ioredis)
+  ### 🔥 [Redis](https://www.npmjs.com/package/ioredis)
 
   Banco de dados em memória (cache)
 
@@ -69,7 +69,7 @@
     - [ZINCRBY](https://redis.io/commands/zincrby/)
     - [ZRANGE](https://redis.io/commands/zrange/)
 
-  ## 👜 [Render](https://dashboard.render.com/)
+  ### 👜 [Render](https://dashboard.render.com/)
 
   Para hospedagem da aplicação (node, postgres e redis)
 
