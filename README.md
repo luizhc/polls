@@ -76,11 +76,12 @@
 ## 🛹 Execução
 
 - Instale as dependências: `npm i`
-- Prepare o [docker](#🐳-docker)
+- Configure seu [docker](#🐳-docker): `npm run docker`
+- Prepare sua base de dados local: `npm run prisma`
 - Execute o projeto:
   - Local: `npm run dev`
   - Prod: `npm run start`
-- Confira as APIs no [Hoppscotch](#🔌-hoppscotch)
+- Desfrute das [APIs](#🚀-apis)
 
 ## 🚀 APIs
 
