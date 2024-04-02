@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "tsx watch src/http/server.ts",
     "build": "tsup src",
-    "start": "node dist/http/server.js"
+    "start": "node dist/http/server.js",
+    "docker": "docker compose up -d",
+    "prisma": "npx prisma migrate dev && npx prisma studio"
   },
   "keywords": [],
   "author": "",
