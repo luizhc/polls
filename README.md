@@ -81,3 +81,65 @@
   - Local: `npm run dev`
   - Prod: `npm run start`
 - Confira as APIs no [Hoppscotch](#🔌-hoppscotch)
+
+## 🚀 APIs
+
+Faça o download e importe no seu [Hoppscotch](#🔌-hoppscotch) o arquivo [polls_collection](./assets/polls_collection.json).
+
+### Get polls
+
+Retorna uma lista de enquetes.
+
+- Tipo: `GET`
+- URL: `/polls`
+
+### Get poll
+
+Retorna uma enquete.
+
+- Tipo: `GET`
+- URL: `/polls/:pollId`
+
+### Create poll
+
+Cadastra uma enquete.
+
+- Tipo: `POST`
+- URL: `/polls`
+- Tipo de conteúdo: `application/json`
+- Payload:
+
+```
+{
+  "title": "Qual é o melhor framework Node.js?",
+  "options": ["Express", "Fastify", "NestJS", "HapiJS"]
+}
+```
+
+### Vote on poll
+
+Realiza um voto em uma enquete.
+
+- Tipo: `POST`
+- URL: `/polls/:pollId/votes`
+- Tipo de conteúdo: `application/json`
+
+```
+{
+  "pollOptionId": "81982dec-1375-4e1c-99dc-32147baf99b9"
+}
+```
+
+### Poll results
+
+Acompanha em tempo real os votos realizados em uma enquete.
+
+- Tipo: `WebSocket`
+- URL: `/polls/:pollId/results`
+
+### Chat
+
+Acompanha em tempo real as mensagens enviadas em uma sala de chat.
+
+- Tipo: `WebSocket`
+- URL: `/chat/:chatId`

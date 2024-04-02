@@ -1,0 +1,73 @@
+{
+  "v": 2,
+  "name": "Polls",
+  "folders": [],
+  "requests": [
+    {
+      "method": "GET",
+      "v": "3",
+      "body": {
+        "contentType": null,
+        "body": "{\n  \"title\": \"Qual é o melhor framework Node.js?\",\n  \"options\": [\"Express\", \"Fastify\", \"NestJS\", \"HapiJS\"]\n}"
+      },
+      "testScript": "",
+      "endpoint": "<<baseURL>>/polls",
+      "headers": [],
+      "auth": { "authType": "none", "authActive": true },
+      "name": "Get polls",
+      "preRequestScript": "",
+      "params": [],
+      "requestVariables": []
+    },
+    {
+      "method": "GET",
+      "name": "Get poll",
+      "params": [],
+      "headers": [],
+      "body": {
+        "contentType": null,
+        "body": "{\n  \"title\": \"Qual é o melhor framework Node.js?\",\n  \"options\": [\"Express\", \"Fastify\", \"NestJS\", \"HapiJS\"]\n}"
+      },
+      "endpoint": "<<baseURL>>/polls/158850ab-0644-4cf4-a7f9-b6b00419fc9d",
+      "preRequestScript": "",
+      "testScript": "",
+      "v": "3",
+      "auth": { "authType": "none", "authActive": true },
+      "requestVariables": []
+    },
+    {
+      "headers": [],
+      "name": "Create poll",
+      "params": [],
+      "endpoint": "<<baseURL>>/polls",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"title\": \"Qual é o melhor framework Node.js?\",\n  \"options\": [\"Express\", \"Fastify\", \"NestJS\", \"HapiJS\"]\n}"
+      },
+      "auth": { "authActive": true, "authType": "none" },
+      "method": "POST",
+      "v": "3",
+      "testScript": "",
+      "preRequestScript": "",
+      "requestVariables": []
+    },
+    {
+      "params": [],
+      "method": "POST",
+      "headers": [],
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"pollOptionId\": \"81982dec-1375-4e1c-99dc-32147baf99b9\"\n}"
+      },
+      "name": "Vote on poll",
+      "v": "3",
+      "auth": { "authType": "none", "authActive": true },
+      "preRequestScript": "",
+      "testScript": "",
+      "endpoint": "<<baseURL>>/polls/158850ab-0644-4cf4-a7f9-b6b00419fc9d/votes",
+      "requestVariables": []
+    }
+  ],
+  "auth": { "authActive": false, "authType": "inherit" },
+  "headers": []
+}
