@@ -85,28 +85,40 @@
 
 ## 🚀 APIs
 
+### URL
+
+- Http:
+
+  - Local: `http://localhost:3333`
+  - Prod: `https://polls-86ms.onrender.com`
+
+- WebSocket:
+
+  - Local: `ws://localhost:3333`
+  - Prod: `wss://polls-86ms.onrender.com`
+
 No seu [Hoppscotch](#-hoppscotch) baixe e importe o arquivo <a href="https://github.com/luizhc/polls/blob/main/assets/polls_collection.zip" download>polls_collection.json</a>.
 
 ### Get polls
 
 Retorna uma lista de enquetes.
 
-- Tipo: `GET`
-- URL: `/polls`
+- Tipo: `Rest > GET`
+- URL: `<URL>/polls`
 
 ### Get poll
 
 Retorna uma enquete.
 
-- Tipo: `GET`
-- URL: `/polls/:pollId`
+- Tipo: `Rest > GET`
+- URL: `<URL>/polls/:pollId`
 
 ### Create poll
 
 Cadastra uma enquete.
 
-- Tipo: `POST`
-- URL: `/polls`
+- Tipo: `Rest > POST`
+- URL: `<URL>/polls`
 - Tipo de conteúdo: `application/json`
 - Payload:
 
@@ -121,8 +133,8 @@ Cadastra uma enquete.
 
 Realiza um voto em uma enquete.
 
-- Tipo: `POST`
-- URL: `/polls/:pollId/votes`
+- Tipo: `Rest > POST`
+- URL: `<URL>/polls/:pollId/votes`
 - Tipo de conteúdo: `application/json`
 
 ```
@@ -133,14 +145,14 @@ Realiza um voto em uma enquete.
 
 ### Poll results
 
-Acompanha em tempo real os votos realizados em uma enquete.
+Acompanha em tempo real os votos realizados em uma enquete (originados pela API [Vote on poll](#vote-on-poll)).
 
-- Tipo: `WebSocket`
-- URL: `/polls/:pollId/results`
+- Tipo: `Tempo Real > WebSocket`
+- URL: `<URL>/polls/:pollId/results`
 
 ### Chat
 
 Acompanha em tempo real as mensagens enviadas em uma sala de chat.
 
-- Tipo: `WebSocket`
-- URL: `/chat/:chatId`
+- Tipo: `Tempo Real > WebSocket`
+- URL: `<URL>/chat/:chatId`
